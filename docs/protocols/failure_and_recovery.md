@@ -1,28 +1,28 @@
 # Failure and Recovery
 
 ## Purpose
-Define actionable stop, blocker, partial completion, rollback, and recovery behavior so risk is controlled and reporting is honest.
+Define stop, blocker, partial completion, rollback, and recovery behavior so risk is controlled and reporting remains honest.
 
 ## Immediate Stop Conditions
-Stop work and report immediately when:
+Stop and report immediately when:
 - continuing would violate scope or explicit constraints
 - required access, dependencies, files, or environment capabilities are unavailable
 - unresolved security, privacy, or data-loss risk is discovered
-- a destructive or irreversible operation is required but not explicitly approved
+- destructive/irreversible operations are required without explicit approval
 - safe Validation cannot be executed
 
 ## Blocker Handling Workflow
-1. Record the blocker: what failed, where, and impact on objective.
-2. Preserve safe state: avoid speculative or unrelated edits.
+1. Record blocker details (what failed, where, impact on objective).
+2. Preserve safe state (avoid speculative or unrelated edits).
 3. Attempt only in-scope, low-risk fallback paths.
-4. If still blocked, report external action needed and mark status `Blocked`.
+4. If still blocked, report required external action and set status `Blocked`.
 
 ## Partial Completion Standard
-`Partial` means some in-scope deliverables are complete, but objective end point is not fully met.
+Use `Partial` only when some in-scope deliverables are complete but objective end point is not fully achieved.
 
 When reporting `Partial`:
-- list completed items and remaining items explicitly
-- include current Validation status and known gaps
+- list completed vs remaining items explicitly
+- include Validation status and known gaps
 - state shipping risk of current state
 - provide minimal safe next steps
 
@@ -31,17 +31,17 @@ If changes touch config, schema, deployment behavior, data movement, or destruct
 - changed surfaces (files/components/behaviors)
 - rollback trigger conditions
 - exact rollback steps
-- post-rollback verification commands/checks
+- post-rollback verification checks
 
 ## Safe Recovery Guidance
-Recovery notes should be:
+Recovery notes must be:
 - specific (concrete commands/actions)
 - minimal (fewest steps to safe state)
 - testable (verification included)
-- honest about residual risk or unknowns
+- honest about residual risk/unknowns
 
 ## Completion Status Labels
-Use exactly one in handoff and PR context:
-- `Complete`: Objective and end point achieved.
-- `Partial`: Work delivered but end point not fully achieved.
-- `Blocked`: Work cannot proceed safely without external input/action.
+Use exactly one status in Completion Report and PR context:
+- `Complete`: objective and end point achieved.
+- `Partial`: work delivered but end point not fully achieved.
+- `Blocked`: work cannot proceed safely without external input/action.

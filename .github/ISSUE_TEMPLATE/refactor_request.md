@@ -14,6 +14,9 @@ assignees: []
 ## Target Improvements
 - 
 
+## Task Class (expected)
+- `small` / `non-trivial` / `high-risk`
+
 ## Non-Goals
 - 
 
@@ -22,6 +25,15 @@ assignees: []
 - 
 
 ### Out of Scope
+- 
+
+## Constraints
+- 
+
+## Success Criteria
+- 
+
+## Failure Criteria
 - 
 
 ## Risks

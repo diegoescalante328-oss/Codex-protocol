@@ -3,20 +3,16 @@
 Codex Project Kit is a reusable repository operating system for running tasks from intake through Completion Report with clear scope, staged execution, validation evidence, and safe handoff.
 
 ## Why this exists
-This repository standardizes project execution so future Codex tasks can run with minimal prompt repetition while preserving quality and auditability.
-
-## Who should use it
-- Engineers and technical leads delegating delivery work to Codex.
-- Teams that want consistent issue/PR workflow and validation reporting.
-- Repositories that need repeatable planning, execution, and handoff patterns.
+This repository reduces prompt repetition and quality variance in repeated Codex-driven work.
 
 ## Start here
-1. Read [`AGENTS.md`](AGENTS.md).
-2. Read the protocol in [`docs/protocols/project_execution_protocol.md`](docs/protocols/project_execution_protocol.md).
-3. Use intake and task templates in [`docs/templates/`](docs/templates/).
+1. Read [`AGENTS.md`](AGENTS.md) for operating rules.
+2. Read [`docs/project_profile.md`](docs/project_profile.md) for repo-specific conventions.
+3. Read planning rules in [`PLANS.md`](PLANS.md).
+4. Follow protocol stages in [`docs/protocols/project_execution_protocol.md`](docs/protocols/project_execution_protocol.md).
 
 ## Workflow model
-Codex Project Kit uses this stage sequence:
+Stage sequence:
 1. Discovery
 2. Plan
 3. Design Contract
@@ -26,24 +22,34 @@ Codex Project Kit uses this stage sequence:
 7. Documentation
 8. Handoff
 
-Task class guidance (small vs non-trivial vs high-risk) lives in [`docs/protocols/stage_definitions.md`](docs/protocols/stage_definitions.md).
+Task classification and rigor: [`docs/protocols/stage_definitions.md`](docs/protocols/stage_definitions.md).
 
-## ExecPlan usage
-For non-trivial or high-risk tasks, create/update an ExecPlan in [`plans/active/`](plans/active/) using [`docs/templates/execplan_template.md`](docs/templates/execplan_template.md) before Implementation.
+## Planning system
+- Non-trivial/high-risk tasks require an ExecPlan before Implementation.
+- Planning guide: [`PLANS.md`](PLANS.md)
+- ExecPlan template: [`docs/templates/execplan_template.md`](docs/templates/execplan_template.md)
+- Active plans: [`plans/active/`](plans/active/)
+- Example ExecPlan: [`docs/examples/execplans/example_protocol_docs_hardening_execplan.md`](docs/examples/execplans/example_protocol_docs_hardening_execplan.md)
 
 ## Validation and reporting
-- Validation requirements: [`docs/standards/validation_matrix.md`](docs/standards/validation_matrix.md)
+- Validation matrix: [`docs/standards/validation_matrix.md`](docs/standards/validation_matrix.md)
 - Completion Report template: [`docs/reports/completion_report_template.md`](docs/reports/completion_report_template.md)
 - PR template: [`.github/pull_request_template.md`](.github/pull_request_template.md)
 
-## Repository layout
-- `AGENTS.md`: compact operating rules for Codex.
-- `docs/protocols/`: lifecycle process, task classes, failure/recovery.
-- `docs/standards/`: coding, validation, documentation, security rules.
-- `docs/templates/`: reusable intake/task/ExecPlan templates.
-- `docs/reports/`: Completion Report template.
-- `.github/`: issue templates, PR template, and workflow scaffold.
-- `plans/active/`: active ExecPlans for in-flight non-trivial/high-risk work.
+## Examples
+Practical reference artifacts live in [`docs/examples/`](docs/examples/):
+- issue examples (feature, bugfix, refactor)
+- ExecPlan example
+- Completion Report example
 
-## Data and artifact policy
-Keep large binaries, datasets, and generated artifacts outside the main repository when possible. Store them in approved external storage and reference them from docs.
+## Repository layout
+- `AGENTS.md`: concise recurring operational rules.
+- `PLANS.md`: planning trigger/quality rules for ExecPlans.
+- `docs/project_profile.md`: lightweight repository-specific operating profile.
+- `docs/protocols/`: lifecycle process, task classes, failure/recovery behavior.
+- `docs/standards/`: coding, validation, documentation, security standards.
+- `docs/templates/`: intake/task/ExecPlan templates.
+- `docs/reports/`: Completion Report template.
+- `docs/examples/`: realistic example artifacts.
+- `.github/`: issue templates, PR template, workflow scaffold.
+- `plans/active/`: active ExecPlans for non-trivial/high-risk tasks.

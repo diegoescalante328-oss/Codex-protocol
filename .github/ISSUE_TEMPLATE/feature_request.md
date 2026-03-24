@@ -12,6 +12,9 @@ assignees: []
 
 ## Desired State
 
+## Task Class (expected)
+- `small` / `non-trivial` / `high-risk`
+
 ## In Scope
 - 
 
@@ -27,9 +30,15 @@ assignees: []
 ## Failure Criteria
 - 
 
+## Done Definition
+- 
+
 ## Validation Requirements
 - Required checks:
 - Suggested commands:
+
+## Stop Conditions
+- 
 
 ## Extra Context
 - Dependencies:

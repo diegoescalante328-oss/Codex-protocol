@@ -6,6 +6,10 @@
 - Status: `Complete` / `Partial` / `Blocked`
 - End Point Achieved: Yes / No
 
+## Plan Reference
+- ExecPlan path (if used):
+- Plan deviations and rationale:
+
 ## Files Changed
 - 
 
@@ -13,7 +17,7 @@
 - 
 
 ## Validation Results
-| Check | Command | Result | Notes/Evidence |
+| Check | Command | Result (`PASS`/`FAIL`/`N/A`/`BLOCKED`) | Notes/Evidence |
 |---|---|---|---|
 |  |  |  |  |
 
@@ -22,6 +26,11 @@
 
 ## Known Risks
 - 
+
+## Rollback / Recovery Notes
+- Trigger(s):
+- Steps:
+- Post-rollback verification:
 
 ## Follow-Up Recommendations
 - 
