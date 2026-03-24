@@ -10,32 +10,50 @@ permissions:
 
 jobs:
   codex-review-scaffold:
-    name: Codex Review Placeholder
+    name: Codex Review Scaffold Checks
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Basic repository sanity check
+      - name: Verify required scaffold files
         run: |
-          echo "Running Codex review scaffold checks..."
+          set -euo pipefail
           test -f AGENTS.md
+          test -f README.md
           test -f docs/protocols/project_execution_protocol.md
+          test -f docs/protocols/stage_definitions.md
+          test -f docs/protocols/failure_and_recovery.md
           test -f docs/standards/validation_matrix.md
+          test -f docs/templates/execplan_template.md
+          test -f docs/reports/completion_report_template.md
 
-      - name: Review reminder
+      - name: Markdown heading sanity check
         run: |
-          echo "This workflow is a safe scaffold."
-          echo "Insert real Codex review integration here once your org-specific setup is ready."
-          echo "Potential setup may require additional actions, permissions, or secrets configured at repo/org level."
+          set -euo pipefail
+          # Safe baseline check: each markdown file should start with a heading or front matter.
+          while IFS= read -r file; do
+            first_line="$(head -n 1 "$file")"
+            if [[ "$first_line" =~ ^# ]] || [[ "$first_line" == "---" ]]; then
+              continue
+            fi
+            echo "Unexpected first line in $file: $first_line"
+            exit 1
+          done < <(find . -type f -name '*.md' -not -path './.git/*')
 
-      # Example extension point:
+      - name: Extension guidance
+        run: |
+          echo "This workflow is intentionally conservative."
+          echo "Add organization-specific Codex automation only after required secrets/permissions are configured."
+          echo "Recommended extension point: insert a dedicated review action after scaffold checks pass."
+
+      # Future extension example (disabled intentionally):
       # - name: Run Codex review integration
       #   uses: your-org/your-codex-review-action@v1
       #   with:
       #     config_path: .codex/review-config.yml
       #   env:
-      #     # Only add real secrets after creating them in repository or organization settings.
+      #     # Add only after creating repository/organization secrets.
       #     # CODEX_API_TOKEN: ${{ secrets.CODEX_API_TOKEN }}
       #     CODEX_API_TOKEN: ""

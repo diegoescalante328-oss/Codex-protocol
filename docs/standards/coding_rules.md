@@ -1,36 +1,35 @@
 # Coding Rules
 
-## Readability
-- Prefer clear naming and straightforward control flow.
-- Optimize for maintainers who are new to the code area.
-- Keep functions/modules focused on one responsibility.
+## Readability and Maintainability
+- Use clear naming and direct control flow.
+- Keep units focused and composable.
+- Optimize for future maintainers unfamiliar with the area.
 
-## Minimal Diffs
-- Make the smallest change set that satisfies the objective.
-- Avoid unrelated formatting or refactors in the same change.
+## Minimal Diff Policy
+- Make the smallest coherent change that satisfies objective and Success Criteria.
+- Avoid unrelated refactors or formatting-only edits in the same change.
 
 ## Architecture Consistency
-- Follow existing repository patterns unless an explicit design change is in scope.
-- Preserve interface contracts unless migration is part of the task.
+- Follow existing repository patterns unless an explicit architecture change is in scope.
+- Preserve contracts unless contract migration is part of the Design Contract.
 
 ## File Discipline
-- Place new files in appropriate directories with consistent naming.
-- Do not duplicate logic when existing abstractions are suitable.
-
-## Error Handling
-- Handle failure paths explicitly and predictably.
-- Return actionable error messages without leaking sensitive data.
-
-## Maintainability
-- Prefer composable, testable units.
-- Keep edge cases and invariants visible in code and docs.
+- Place files in the correct domain location.
+- Avoid duplicate logic when existing abstractions can be reused.
+- Keep changed files tightly tied to task scope.
 
 ## Dependency Discipline
-- Avoid adding dependencies without clear value.
-- Reuse standard library or existing project tooling first.
-- Document rationale for any new dependency.
+- Do not add dependencies casually.
+- Prefer standard library and existing tooling first.
+- If adding a dependency, document rationale and operational impact.
 
-## Security-Aware Behavior
-- Treat external input as untrusted.
-- Avoid unsafe shell/file/network operations unless required and validated.
-- Never hardcode credentials, tokens, or private keys.
+## Error Handling
+- Handle expected failure paths explicitly.
+- Provide actionable errors without exposing sensitive internals.
+- Fail safely when assumptions are violated.
+
+## Security-Aware Coding
+- Treat all external input as untrusted.
+- Validate/sanitize data at boundaries.
+- Avoid unsafe shell/file/network patterns.
+- Never commit credentials, secrets, or private keys.

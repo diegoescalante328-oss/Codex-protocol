@@ -1,31 +1,37 @@
 # Documentation Rules
 
 ## When Documentation Must Be Updated
-Update docs whenever a task changes:
+Update docs in the same change set when work changes:
 - behavior
 - interfaces/contracts
-- setup or runtime steps
+- setup or runtime configuration
 - validation expectations
-- operational or recovery procedures
+- operational, rollback, or recovery procedures
+- limitations or known constraints
 
-## Docs That May Need Updates
+## Possible Documentation Targets
 Depending on scope, update one or more of:
 - `README.md`
-- protocol docs under `docs/protocols/`
-- standards under `docs/standards/`
-- templates under `docs/templates/`
-- runbooks, architecture notes, migration notes (if present)
-
-## Content Expectations
-Documentation should include, where applicable:
-- runnable examples or usage patterns
-- setup prerequisites and environment assumptions
-- migration/backward-compatibility notes
-- known limitations and non-goals
-- links to related source docs/templates
+- `AGENTS.md` (only for recurring operational guidance)
+- `docs/protocols/`
+- `docs/standards/`
+- `docs/templates/`
+- runbooks/migration notes/architecture notes (if present)
 
 ## Quality Standard
-- Accurate to current repository behavior.
-- Specific and actionable (avoid vague statements).
-- Consistent terminology across documents.
-- Concise structure with clear headings and checklists where helpful.
+Documentation must be:
+- accurate to the implemented state
+- specific and actionable
+- aligned with repository vocabulary (Discovery, Plan, Design Contract, etc.)
+- cross-referenced to related docs where useful
+- concise and scan-friendly
+
+## Examples and Operational Notes
+When relevant, include:
+- setup prerequisites and assumptions
+- command examples that actually work for the repository
+- migration/backward-compatibility notes
+- known limitations and non-goals
+
+## Alignment Requirement
+Do not leave docs contradicting implementation or protocol. If complete alignment is not possible in the task, report the gap explicitly in Handoff.

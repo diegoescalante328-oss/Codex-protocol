@@ -1,10 +1,10 @@
 # Validation Matrix
 
 ## Objective
-Provide a consistent, explicit standard for proving task correctness and readiness.
+Provide a uniform method to prove implementation quality, report evidence, and separate introduced failures from pre-existing issues.
 
 ## Universal Checks
-Run all checks that apply to the task and repository stack:
+Run every check that is applicable to the task and repository stack:
 - Unit tests
 - Integration tests
 - Lint
@@ -14,36 +14,42 @@ Run all checks that apply to the task and repository stack:
 - Smoke test
 - Manual acceptance check
 
-If a check is not applicable, mark it `N/A` with a brief reason.
+If a check is not run, mark it `N/A` or `BLOCKED` with a reason.
 
 ## Required Reporting Format
-Report validation in a matrix table:
-- Check name
+Use a table with:
+- Check
 - Command
 - Result (`PASS`, `FAIL`, `N/A`, `BLOCKED`)
-- Notes/evidence
+- Notes/Evidence
 
-Also include:
-- Summary pass rate
-- Any blocked checks and required follow-up
+Also report:
+- summary outcome
+- blockers and required follow-up
+- distinction between pre-existing failures and introduced failures
 
 ## Example Validation Matrix
-| Check | Command | Result | Notes |
+| Check | Command | Result | Notes/Evidence |
 |---|---|---|---|
 | Unit tests | `pytest -q` | PASS | All tests passed. |
-| Integration tests | `pytest tests/integration -q` | N/A | No integration suite exists. |
+| Integration tests | `pytest tests/integration -q` | N/A | No integration test suite exists. |
 | Lint | `ruff check .` | PASS | No violations. |
-| Formatting | `ruff format --check .` | PASS | Formatting clean. |
+| Formatting check | `ruff format --check .` | PASS | Formatting clean. |
 | Typecheck | `mypy .` | N/A | Typecheck not configured. |
-| Build | `npm run build` | PASS | Build artifact produced. |
-| Smoke test | `npm run start:smoke` | PASS | App starts and health endpoint is OK. |
-| Manual acceptance | See checklist | PASS | Required acceptance items verified. |
+| Build | `npm run build` | PASS | Build succeeded. |
+| Smoke test | `npm run start:smoke` | PASS | Health endpoint responded. |
+| Manual acceptance check | See checklist | PASS | Acceptance checks complete. |
 
 ## Acceptance Checklist Template
-- [ ] Objective met at defined end point.
-- [ ] In-scope items completed.
+- [ ] Objective and end point achieved (or explicitly marked Partial/Blocked).
+- [ ] In-scope work completed.
 - [ ] Out-of-scope boundaries respected.
-- [ ] Required validation checks passed or explicitly marked N/A/BLOCKED.
-- [ ] Security-sensitive changes reviewed.
-- [ ] Documentation updated.
-- [ ] Rollback notes captured.
+- [ ] Applicable checks completed and reported with evidence.
+- [ ] Pre-existing failures distinguished from introduced failures.
+- [ ] Security-sensitive surfaces reviewed where relevant.
+- [ ] Documentation updated where required.
+- [ ] Rollback/recovery notes included when relevant.
+
+## Where to Report Validation
+- Completion handoff: `docs/reports/completion_report_template.md`
+- Pull requests: `.github/pull_request_template.md`

@@ -1,156 +1,161 @@
 # Project Execution Protocol
 
 ## Objective
-Define a repeatable execution lifecycle for Codex-driven delivery with explicit scope control, validation gates, and handoff quality.
+Define the authoritative lifecycle for Codex Project Kit tasks so work is scoped, staged, validated, hardened, and handed off with clear evidence.
 
 ## Stage 0: Intake / Readiness
 **Purpose**
-- Ensure the task is actionable before any implementation starts.
+- Confirm the task is actionable before Discovery.
 
 **Required inputs/actions**
 - Capture intake using `docs/templates/project_intake_template.md`.
-- Confirm objective, start point, end point, constraints, scope boundaries, and success/failure criteria.
-- Identify missing prerequisites.
+- Confirm objective, start point, end point, in-scope/out-of-scope boundaries, constraints, Success Criteria, and Failure Criteria.
+- Identify blockers, missing dependencies, and environment assumptions.
 
 **Required outputs**
 - Completed intake record.
-- Initial task classification (small, non-trivial, high-risk).
+- Task class decision: small, non-trivial, or high-risk.
 
 **Exit criteria**
 - Intake is complete and unambiguous.
-- Task is classified and ready for Discovery.
+- Task is ready for Stage 1 (Discovery).
 
 ## Stage 1: Discovery
 **Purpose**
-- Build factual understanding of the current state and impacted areas.
+- Build an accurate understanding of current state and impact area.
 
 **Required inputs/actions**
-- Read relevant code/docs and repository instructions (`AGENTS.md`).
-- Identify dependencies, risks, and assumptions.
-- Clarify unknowns and blockers.
+- Read relevant repository instructions and impacted files.
+- Identify likely target files, dependencies, assumptions, and risks.
+- Define a realistic validation path.
 
 **Required outputs**
-- Discovery notes covering impacted files, constraints, and risks.
+- Discovery notes with assumptions, dependencies, and risk highlights.
 
 **Exit criteria**
-- Current state and risks are sufficiently understood to plan.
+- Current state and constraints are clear enough to plan safely.
 
 ## Stage 2: Plan
 **Purpose**
-- Define a controlled approach before coding.
+- Define execution sequence, validation gates, and rollback approach.
 
 **Required inputs/actions**
-- Create a stepwise plan with validation gates.
-- For non-trivial/high-risk tasks, create an ExecPlan in `plans/active/` from `docs/templates/execplan_template.md`.
-- Define rollback/recovery path.
+- Draft ordered implementation steps.
+- Define applicable validation checks from `docs/standards/validation_matrix.md`.
+- For non-trivial/high-risk tasks, create or update an ExecPlan in `plans/active/` using `docs/templates/execplan_template.md`.
 
 **Required outputs**
-- Approved implementation plan and validation plan.
+- Plan with file targets, risks, validation strategy, and rollback notes.
 
 **Exit criteria**
-- Plan maps directly to objective and constraints.
-- Validation and rollback are defined.
+- Plan is actionable, scoped, and traceable to objective and constraints.
 
 ## Stage 3: Design Contract
 **Purpose**
-- Lock implementation intent to prevent scope drift.
+- Lock design intent and reduce ambiguity before editing.
 
 **Required inputs/actions**
-- Specify target files and interfaces.
-- Document invariants and non-goals.
-- Confirm compatibility and migration expectations.
+- Define touched files/components and interface implications.
+- Record invariants, non-goals, and compatibility expectations.
+- Capture key decisions in the ExecPlan or task record.
 
 **Required outputs**
-- Design contract section (standalone note or embedded in ExecPlan).
+- Design Contract section aligned to planned implementation.
 
 **Exit criteria**
-- Planned design is specific enough to implement without ambiguity.
+- Implementation can proceed without unresolved architectural ambiguity.
 
 ## Stage 4: Implementation
 **Purpose**
-- Produce code/doc/config changes that satisfy the design contract.
+- Apply scoped changes that satisfy the Design Contract.
 
 **Required inputs/actions**
-- Execute planned changes with minimal, readable diffs.
-- Keep work in-scope and architecture-consistent.
-- Track deviations from plan.
+- Implement minimal, reviewable diffs using existing patterns.
+- Keep work within declared scope.
+- Track deviations and rationale.
 
 **Required outputs**
-- Implemented changes ready for validation.
+- Updated code/docs/config ready for validation.
 
 **Exit criteria**
-- Changes complete against defined scope.
+- In-scope implementation is complete and coherent.
 
 ## Stage 5: Validation
 **Purpose**
-- Prove the implementation meets quality and correctness requirements.
+- Demonstrate correctness and readiness with explicit evidence.
 
 **Required inputs/actions**
-- Run applicable checks from `docs/standards/validation_matrix.md`.
-- Record commands and outcomes.
-- Resolve failures or explicitly report blockers.
+- Run all applicable checks in the validation matrix.
+- Capture exact commands and results.
+- Distinguish pre-existing failures from introduced failures.
 
 **Required outputs**
-- Validation log with pass/fail status and evidence.
+- Validation evidence table and status summary.
 
 **Exit criteria**
-- All required checks pass or approved exceptions are documented.
+- Required checks pass, or exceptions/blockers are explicitly documented.
 
 ## Stage 6: Hardening
 **Purpose**
-- Reduce operational and security risk before closeout.
+- Reduce operational, reliability, and security risk before handoff.
 
 **Required inputs/actions**
-- Review error paths, edge cases, and security-sensitive behavior.
-- Confirm rollback notes and failure recovery steps.
-- Remove temporary/debug artifacts.
+- Review edge cases and failure paths.
+- Confirm security-sensitive surfaces and rollback instructions.
+- Remove temporary/debug-only artifacts.
 
 **Required outputs**
-- Hardened change set and risk notes.
+- Hardened change set with residual risk notes.
 
 **Exit criteria**
-- No unresolved high-severity risks remain.
+- No unresolved high-severity risk remains without explicit escalation.
 
 ## Stage 7: Documentation
 **Purpose**
-- Ensure repository knowledge reflects delivered behavior.
+- Keep repository documentation aligned with implemented behavior.
 
 **Required inputs/actions**
-- Update affected docs following `docs/standards/documentation_rules.md`.
-- Include setup, usage, constraints, and limitations where relevant.
-- Cross-link related docs.
+- Update affected docs using `docs/standards/documentation_rules.md`.
+- Update setup/config/limitations/migration notes when relevant.
+- Ensure terminology is consistent with protocol stages.
 
 **Required outputs**
-- Updated, accurate documentation.
+- Accurate docs reflecting new behavior and operational expectations.
 
 **Exit criteria**
-- Documentation is complete, coherent, and aligned with implementation.
+- Documentation is complete, cross-referenced, and implementation-aligned.
 
 ## Stage 8: Handoff / Closeout
 **Purpose**
-- Deliver an auditable completion package for reviewers and operators.
+- Deliver a complete, auditable Completion Report.
 
 **Required inputs/actions**
-- Produce completion report using `docs/reports/completion_report_template.md`.
-- Summarize objective status, changed files, commands run, results, risks, and follow-ups.
-- Note partial completion or blockers, if any.
+- Produce handoff using `docs/reports/completion_report_template.md`.
+- Include objective status, files changed, commands run, Validation results, known risks, rollback notes (if relevant), and follow-ups.
 
 **Required outputs**
-- Final handoff report and PR-ready summary.
+- Completion Report and PR-ready summary.
 
 **Exit criteria**
-- Work is reviewable, reproducible, and operationally understandable.
+- Work can be reviewed, reproduced, and safely operated.
 
 ## Global Success Criteria
-- Objective achieved within stated constraints.
-- Scope boundaries respected.
-- Required validation completed and reported.
-- Documentation and handoff are complete and accurate.
-- Rollback/recovery guidance is available.
+- Objective and end point are met within constraints.
+- Scope boundaries are respected.
+- Validation evidence is complete and honest.
+- Documentation reflects implementation.
+- Recovery/rollback guidance exists when risk warrants it.
 
 ## Global Failure Criteria
-- End state does not satisfy objective.
-- Scope drift introduced unapproved changes.
-- Required validation is missing or failing without explicit exception.
-- Security, data integrity, or operational risks are left unresolved.
-- Handoff omits critical implementation or recovery details.
+- End point is not met or objective is materially incomplete.
+- Unapproved scope expansion occurred.
+- Required validation is missing, blocked, or failing without disclosure.
+- Unresolved security/data-integrity/operational risk remains.
+- Completion Report omits critical information.
+
+## Cross-Document Alignment
+- Stage details in this file map to task classes in `docs/protocols/stage_definitions.md`.
+- Blocking, partial completion, and recovery behavior are defined in `docs/protocols/failure_and_recovery.md`.
+- Validation requirements are governed by `docs/standards/validation_matrix.md`.
+- Coding, docs, and security expectations are governed by `docs/standards/`.
+- Intake, task, and planning artifacts use templates in `docs/templates/`.
