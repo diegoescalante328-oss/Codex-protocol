@@ -1,6 +1,6 @@
 ---
 name: Feature Request
-about: Request a new capability using Codex Project Kit workflow
+about: Request a feature using Codex Project Kit workflow
 title: "[Feature] "
 labels: [feature]
 assignees: []
@@ -12,11 +12,10 @@ assignees: []
 
 ## Desired State
 
-## Scope
-### In Scope
+## In Scope
 - 
 
-### Out of Scope
+## Out of Scope
 - 
 
 ## Constraints
@@ -28,7 +27,7 @@ assignees: []
 ## Failure Criteria
 - 
 
-## Validations
+## Validation Requirements
 - Required checks:
 - Suggested commands:
 

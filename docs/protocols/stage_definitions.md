@@ -1,46 +1,58 @@
 # Stage Definitions
 
 ## Purpose
-Classify work so protocol rigor matches task complexity and risk.
+Classify tasks so process rigor, validation depth, and rollback expectations match risk.
 
-## Task Classes
+## Small Task
+A narrowly scoped, low-risk change with minimal coupling.
 
-### Small Task
-A change with narrow scope, low coupling, and low risk.
-
-Typical characteristics:
-- Touches few files, usually in one area.
-- No architectural change.
-- Straightforward validation.
-- No sensitive security or data impact.
+**Characteristics**
+- Touches a small number of files in one area.
+- No architecture shift or critical interface change.
+- Low likelihood of regression.
+- No sensitive security/data/deployment surface.
 
 **Required protocol level**
-- Stage 0 through Stage 8 still apply, but may be lightweight.
+- Use all stages, but with lightweight artifacts.
 - ExecPlan is optional.
 
-### Non-Trivial Task
-A change with broader scope, multi-file impact, or moderate uncertainty.
+**Validation rigor**
+- Run checks directly relevant to touched surfaces.
+- At minimum provide a clear smoke/manual verification path.
 
-Typical characteristics:
-- Crosses modules or concerns.
-- Requires explicit design choices.
-- Needs multiple validation checks.
-- Risk of regressions if not planned.
+## Non-Trivial Task
+A broader change with moderate uncertainty or cross-area impact.
 
-**Required protocol level**
-- Full staged protocol required.
-- ExecPlan in `plans/active/` is mandatory.
-
-### High-Risk Task
-A change with significant security, reliability, data, or operational impact.
-
-Typical characteristics:
-- Touches auth, permissions, data lifecycle, migrations, or critical runtime behavior.
-- Failure could cause outages, data loss, or security exposure.
-- Rollback complexity is non-trivial.
+**Characteristics**
+- Multi-file or multi-component impact.
+- Requires explicit design decisions.
+- Has meaningful regression risk if unplanned.
+- May touch behavior with downstream dependencies.
 
 **Required protocol level**
-- Full staged protocol with strict gating at each stage.
-- ExecPlan is mandatory.
-- Explicit rollback and failure handling notes are mandatory.
-- Elevated validation depth and hardening checks are mandatory.
+- Full stage execution is required.
+- ExecPlan is required before Implementation.
+
+**Validation rigor**
+- Run a broad applicable validation set (tests/lint/format/type/build/smoke/manual as relevant).
+- Document command evidence and unresolved exceptions.
+
+## High-Risk Task
+A change with material security, reliability, data, or operational risk.
+
+**Characteristics**
+- Touches auth, authorization, secrets, data lifecycle, schema, migrations, deployment controls, or critical runtime paths.
+- Failure can cause outage, data loss, compliance/security exposure, or difficult rollback.
+
+**Required protocol level**
+- Full stage execution with strict gating.
+- ExecPlan is mandatory and must include explicit rollback/recovery.
+- Design Contract must document invariants and non-goals in detail.
+
+**Validation rigor**
+- Deep validation and hardening are mandatory.
+- Include targeted negative-path checks and explicit risk notes.
+- Include a dedicated security note in handoff when sensitive surfaces are touched.
+
+## Escalation Rule
+If uncertainty about class remains after Discovery, classify upward (small → non-trivial → high-risk) and apply stricter controls.

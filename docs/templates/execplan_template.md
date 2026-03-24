@@ -25,16 +25,19 @@
 
 ## Discovery Notes
 - Current state:
-- Key dependencies:
+- Desired state:
+- Dependencies:
 - Assumptions:
+- Risks discovered during Discovery:
 
 ## Risks
 - 
 
 ## Design Contract
-- Planned interfaces/contracts:
+- Planned files/components/interfaces:
 - Invariants to preserve:
 - Non-goals:
+- Compatibility/migration considerations:
 
 ## Implementation Plan
 1. 
@@ -47,14 +50,14 @@
 | Unit tests |  |  |
 | Integration tests |  |  |
 | Lint |  |  |
-| Formatting |  |  |
+| Formatting check |  |  |
 | Typecheck |  |  |
 | Build |  |  |
 | Smoke test |  |  |
-| Manual acceptance |  |  |
+| Manual acceptance check |  |  |
 
 ## Rollback / Recovery
-- Rollback trigger:
+- Rollback trigger(s):
 - Rollback steps:
 - Post-rollback verification:
 
@@ -62,8 +65,10 @@
 - 
 
 ## Final Report Requirements
-- Objective status
+- Summary and objective status (`Complete`, `Partial`, `Blocked`)
 - Files changed
-- Commands run and results
+- Commands run
+- Validation results
 - Documentation updates
-- Risks and follow-up actions
+- Known risks
+- Follow-up recommendations

@@ -1,8 +1,6 @@
 # Codex Task Template
 
-Use this template when assigning a task to Codex.
-
-> Follow repository instructions in `AGENTS.md` and execute the required workflow stages.
+> Follow `AGENTS.md` and the repository protocol/standards docs.
 
 ## Task
 
@@ -44,6 +42,7 @@ Use this template when assigning a task to Codex.
 - 
 
 ## Stop Conditions
-- Stop if scope/constraints are violated.
-- Stop if required dependencies/permissions are missing.
+- Stop if scope/constraints conflict or become ambiguous in a risky way.
+- Stop if required access/dependencies are missing.
 - Stop if unresolved security or data-loss risk is identified.
+- Stop if safe Validation cannot be performed.

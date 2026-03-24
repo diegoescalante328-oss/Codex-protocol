@@ -1,37 +1,47 @@
 # Failure and Recovery
 
 ## Purpose
-Define safe behavior when work cannot proceed, validation fails, or delivery is partial.
+Define actionable stop, blocker, partial completion, rollback, and recovery behavior so risk is controlled and reporting is honest.
 
-## Stop Immediately When
-- Continuing would violate explicit scope or constraints.
-- Required permissions, dependencies, or critical inputs are unavailable.
-- A security risk, data-loss risk, or destructive side effect is detected and unresolved.
-- Validation reveals a high-severity regression with no safe mitigation.
+## Immediate Stop Conditions
+Stop work and report immediately when:
+- continuing would violate scope or explicit constraints
+- required access, dependencies, files, or environment capabilities are unavailable
+- unresolved security, privacy, or data-loss risk is discovered
+- a destructive or irreversible operation is required but not explicitly approved
+- safe Validation cannot be executed
 
-## What To Do When Blocked
-1. Record the blocker clearly (what, where, impact).
-2. Preserve current state and avoid speculative changes.
-3. Attempt safe fallback paths only if they stay in-scope.
-4. If unresolved, mark task as blocked and report required external action.
+## Blocker Handling Workflow
+1. Record the blocker: what failed, where, and impact on objective.
+2. Preserve safe state: avoid speculative or unrelated edits.
+3. Attempt only in-scope, low-risk fallback paths.
+4. If still blocked, report external action needed and mark status `Blocked`.
 
-## Partial Completion Rules
-- Deliver only coherent, reviewable partial work.
-- Explicitly mark incomplete sections.
-- Do not claim objective success when end point is unmet.
-- Include next actions and ownership assumptions.
+## Partial Completion Standard
+`Partial` means some in-scope deliverables are complete, but objective end point is not fully met.
+
+When reporting `Partial`:
+- list completed items and remaining items explicitly
+- include current Validation status and known gaps
+- state shipping risk of current state
+- provide minimal safe next steps
 
 ## Rollback Notes Requirements
-Rollback guidance must include:
-- What changed (files/components/behaviors).
-- Trigger for rollback (failure symptoms or thresholds).
-- Exact rollback actions (revert commit, restore config/state, disable feature path, etc.).
-- Post-rollback verification steps.
+If changes touch config, schema, deployment behavior, data movement, or destructive operations, include:
+- changed surfaces (files/components/behaviors)
+- rollback trigger conditions
+- exact rollback steps
+- post-rollback verification commands/checks
 
-## Safe Reporting for Incomplete Work
-When incomplete, the handoff must include:
-- Objective status: `Complete`, `Partial`, or `Blocked`.
-- Completed scope vs remaining scope.
-- Validation status and known failing checks.
-- Risks of shipping current state.
-- Minimal path to finish safely.
+## Safe Recovery Guidance
+Recovery notes should be:
+- specific (concrete commands/actions)
+- minimal (fewest steps to safe state)
+- testable (verification included)
+- honest about residual risk or unknowns
+
+## Completion Status Labels
+Use exactly one in handoff and PR context:
+- `Complete`: Objective and end point achieved.
+- `Partial`: Work delivered but end point not fully achieved.
+- `Blocked`: Work cannot proceed safely without external input/action.

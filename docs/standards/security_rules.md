@@ -1,28 +1,34 @@
 # Security Rules
 
+## Safe-by-Default Policy
+Prefer designs and implementation choices that reduce blast radius, privilege, and irreversible side effects.
+
 ## No Secrets in Repository
-- Never commit API keys, tokens, passwords, certificates, or private keys.
-- Use environment variables or secure secret managers.
-- If a secret exposure is detected, stop and report immediately.
+- Never commit keys, tokens, passwords, certificates, or private keys.
+- Use environment variables or approved secret managers.
+- If secret exposure is suspected, stop and report immediately.
 
 ## Least Privilege Mindset
-- Request and use only minimum permissions required.
-- Avoid broad access patterns when scoped access is possible.
+- Use minimum permissions required for each action.
+- Avoid broad filesystem, shell, network, or auth access when narrower options exist.
 
-## Sensitive Operation Discipline
-- Auth flows: preserve principle-of-least-privilege and fail-closed behavior.
-- File operations: avoid destructive actions without explicit safeguards.
-- Shell commands: avoid unsafe interpolation and validate inputs.
-- Network behavior: communicate only with required endpoints and protocols.
+## Sensitive Surface Handling
+Apply extra care when touching:
+- authentication/authorization flows
+- token/session handling
+- file operations (especially destructive actions)
+- shell command execution and input interpolation
+- network calls and external integrations
+- data movement, storage, and retention
 
-## External Input Validation
-- Treat all external/user/system input as untrusted.
-- Validate format, bounds, and allowed values before use.
-- Sanitize output when rendering user-controlled content.
+## External Input Rules
+- Treat all external input as untrusted.
+- Validate format, type, range, and allowed values.
+- Sanitize output where user-controlled content is rendered.
 
-## Handoff Security Note Requirement
-If sensitive areas are touched (auth, data handling, permissions, filesystem, network, secrets), include a dedicated security note in final handoff covering:
-- what sensitive surface changed
+## Final Handoff Security Note
+When sensitive surfaces are changed, include a dedicated security note in Handoff covering:
+- what changed
 - risk assessment summary
-- validations performed
-- remaining cautions or follow-up actions
+- security-relevant validations performed
+- remaining cautions and follow-up actions

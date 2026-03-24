@@ -4,7 +4,7 @@
 
 ## Objective Status
 - Status: `Complete` / `Partial` / `Blocked`
-- End point achieved: Yes / No
+- End Point Achieved: Yes / No
 
 ## Files Changed
 - 
@@ -13,7 +13,7 @@
 - 
 
 ## Validation Results
-| Check | Command | Result | Notes |
+| Check | Command | Result | Notes/Evidence |
 |---|---|---|---|
 |  |  |  |  |
 

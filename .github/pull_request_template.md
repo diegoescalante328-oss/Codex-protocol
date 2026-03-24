@@ -14,6 +14,11 @@
 ### Out of Scope
 - 
 
+## Objective Status
+- [ ] Complete
+- [ ] Partial
+- [ ] Blocked
+
 ## Validation Checklist
 - [ ] Unit tests
 - [ ] Integration tests
@@ -25,19 +30,19 @@
 - [ ] Manual acceptance check
 
 ## Validation Details
-| Check | Command | Result | Notes |
+| Check | Command | Result | Notes/Evidence |
 |---|---|---|---|
 |  |  |  |  |
 
 ## Documentation Checklist
-- [ ] README/docs updated if behavior or usage changed
+- [ ] README/docs updated if behavior, setup, interfaces, or limitations changed
 - [ ] Protocol/standards/templates updated if process changed
-- [ ] Limitations or migration notes added when relevant
+- [ ] Recovery/rollback notes added when relevant
 
-## Risks
+## Known Risks
 - 
 
 ## Rollback Notes
-- Trigger:
+- Trigger(s):
 - Steps:
 - Verification after rollback:
