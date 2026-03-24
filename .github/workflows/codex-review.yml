@@ -1,0 +1,41 @@
+name: Codex Review Scaffold
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  codex-review-scaffold:
+    name: Codex Review Placeholder
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Basic repository sanity check
+        run: |
+          echo "Running Codex review scaffold checks..."
+          test -f AGENTS.md
+          test -f docs/protocols/project_execution_protocol.md
+          test -f docs/standards/validation_matrix.md
+
+      - name: Review reminder
+        run: |
+          echo "This workflow is a safe scaffold."
+          echo "Insert real Codex review integration here once your org-specific setup is ready."
+          echo "Potential setup may require additional actions, permissions, or secrets configured at repo/org level."
+
+      # Example extension point:
+      # - name: Run Codex review integration
+      #   uses: your-org/your-codex-review-action@v1
+      #   with:
+      #     config_path: .codex/review-config.yml
+      #   env:
+      #     # Only add real secrets after creating them in repository or organization settings.
+      #     # CODEX_API_TOKEN: ${{ secrets.CODEX_API_TOKEN }}
+      #     CODEX_API_TOKEN: ""
