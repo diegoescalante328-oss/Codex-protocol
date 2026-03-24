@@ -1,5 +1,7 @@
 # Execution Plan (ExecPlan) Template
 
+> Required for non-trivial and high-risk tasks. See `PLANS.md` for trigger rules and quality bar.
+
 ## Task
 
 ## Why This Task Exists
@@ -9,6 +11,9 @@
 ## Start Point
 
 ## End Point
+
+## Task Class
+- `small` / `non-trivial` / `high-risk`
 
 ## Scope
 ### In Scope
@@ -27,11 +32,12 @@
 - Current state:
 - Desired state:
 - Dependencies:
-- Assumptions:
+- Assumptions requiring verification:
 - Risks discovered during Discovery:
 
-## Risks
-- 
+## Risks and Mitigations
+- Risk:
+  - Mitigation:
 
 ## Design Contract
 - Planned files/components/interfaces:
@@ -45,16 +51,16 @@
 3. 
 
 ## Validation Plan
-| Check | Command | Expected Result |
-|---|---|---|
-| Unit tests |  |  |
-| Integration tests |  |  |
-| Lint |  |  |
-| Formatting check |  |  |
-| Typecheck |  |  |
-| Build |  |  |
-| Smoke test |  |  |
-| Manual acceptance check |  |  |
+| Check | Command | Expected Result | Notes |
+|---|---|---|---|
+| Unit tests |  |  |  |
+| Integration tests |  |  |  |
+| Lint |  |  |  |
+| Formatting check |  |  |  |
+| Typecheck |  |  |  |
+| Build |  |  |  |
+| Smoke test |  |  |  |
+| Manual acceptance check |  |  |  |
 
 ## Rollback / Recovery
 - Rollback trigger(s):
@@ -66,6 +72,7 @@
 
 ## Final Report Requirements
 - Summary and objective status (`Complete`, `Partial`, `Blocked`)
+- Plan vs actual summary (including deviations)
 - Files changed
 - Commands run
 - Validation results

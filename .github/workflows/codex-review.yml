@@ -28,6 +28,11 @@ jobs:
           test -f docs/standards/validation_matrix.md
           test -f docs/templates/execplan_template.md
           test -f docs/reports/completion_report_template.md
+          test -f PLANS.md
+          test -f docs/project_profile.md
+          test -d docs/examples/issues
+          test -d docs/examples/execplans
+          test -d docs/examples/reports
 
       - name: Markdown heading sanity check
         run: |

@@ -17,7 +17,16 @@ assignees: []
 2. 
 3. 
 
+## Task Class (expected)
+- `small` / `non-trivial` / `high-risk`
+
 ## Suspected Files or Areas
+- 
+
+## In Scope
+- 
+
+## Out of Scope
 - 
 
 ## Constraints
@@ -29,7 +38,13 @@ assignees: []
 ## Failure Criteria
 - 
 
+## Done Definition
+- 
+
 ## Validation Requirements
 - Required checks:
 - Regression checks:
 - Suggested commands:
+
+## Stop Conditions
+- 

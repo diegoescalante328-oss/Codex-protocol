@@ -1,17 +1,19 @@
 # AGENTS.md
 
-## Repository Purpose
-This repository is **Codex Project Kit**: a reusable operating system for scoped, staged, validated project execution with auditable handoff.
+## Purpose
+Operate this repository as a disciplined execution system for scoped, staged, validated Codex work with auditable handoff.
 
 ## Instruction Priority
 1. Direct system/developer/user instructions
-2. This `AGENTS.md`
-3. Protocols in `docs/protocols/`
-4. Standards in `docs/standards/`
-5. Templates, repository conventions, and local patterns
+2. `AGENTS.md`
+3. `docs/project_profile.md`
+4. `PLANS.md`
+5. `docs/protocols/`
+6. `docs/standards/`
+7. `docs/templates/` and repository conventions
 
 ## Required Workflow
-Use these stages in order for all non-trivial and high-risk tasks (and in lightweight form for small tasks):
+Use this stage order (lightweight for small tasks, full rigor for non-trivial/high-risk):
 1. Discovery
 2. Plan
 3. Design Contract
@@ -21,78 +23,34 @@ Use these stages in order for all non-trivial and high-risk tasks (and in lightw
 7. Documentation
 8. Handoff
 
-## Discovery Requirements
-Before editing, confirm:
-- objective
-- current state and desired end state
-- likely target files and dependencies
-- risks and constraints
-- validation path
-- explicit in-scope/out-of-scope boundaries
-- assumptions requiring verification
+## Core Operating Rules
+- Confirm objective, start/end points, scope boundaries, constraints, assumptions, and validation path before editing.
+- Keep diffs minimal and within declared scope; do not perform unrelated refactors.
+- Use stable vocabulary: `Success Criteria`, `Failure Criteria`, `Done Definition`, `Stop Conditions`, `ExecPlan`, `Completion Report`.
+- Stop immediately if safe validation cannot be performed, required dependencies are missing, or unresolved security/data-loss risk appears.
 
-## Planning Requirements
-Create a concise plan before implementation that includes:
-- proposed file changes
-- ordered execution steps
-- key risks
-- validation approach
-- rollback/recovery considerations when relevant
+## Planning Discipline
+- Non-trivial and high-risk tasks require an ExecPlan **before Implementation**.
+- Use `PLANS.md` for trigger rules and quality bar.
+- Store active plans in `plans/active/` using `docs/templates/execplan_template.md`.
 
-## ExecPlan Rule
-If work is non-trivial or high-risk, create or update an ExecPlan in `plans/active/` using `docs/templates/execplan_template.md` **before** Implementation.
+## Validation and Reporting Discipline
+- Follow `docs/standards/validation_matrix.md`.
+- Run all applicable checks; mark non-run checks as `N/A` or `BLOCKED` with reason/impact.
+- Distinguish pre-existing failures from introduced failures.
+- Produce handoff with `docs/reports/completion_report_template.md`.
 
-## Implementation Rules
-- Keep diffs minimal, readable, and reviewable.
-- Follow existing architecture and repository patterns.
-- Do not add dependencies casually.
-- Do not refactor unrelated areas.
-- Avoid speculative edits.
-
-## Validation Rules
-- Use `docs/standards/validation_matrix.md`.
-- Run all applicable checks.
-- If a check cannot run, report the exact reason and impact.
-- Distinguish pre-existing failures from failures introduced by your change.
-
-## Documentation Rules
-When behavior, setup, interfaces, config, limitations, or operations change, update docs in the same change set using `docs/standards/documentation_rules.md`.
-
-## Stop Conditions
-Stop and report immediately if:
-- requirements conflict or scope is unclear in a way that risks incorrect implementation
-- required access/dependencies are missing
-- unresolved security or data-loss risk appears
-- safe validation cannot be performed
-
-## Handoff Requirements
-Final handoff must include:
-- summary and objective status
-- files changed
-- commands run
-- validation results
-- known risks
-- rollback/recovery notes when relevant
-- follow-up recommendations
-
-Use `docs/reports/completion_report_template.md`.
-
-## Required Supporting Docs (read before major work)
+## Required Reading for Major Work
+- `docs/project_profile.md`
+- `PLANS.md`
 - `docs/protocols/project_execution_protocol.md`
 - `docs/protocols/stage_definitions.md`
 - `docs/protocols/failure_and_recovery.md`
 - `docs/standards/validation_matrix.md`
-- `docs/standards/coding_rules.md`
 - `docs/standards/documentation_rules.md`
 - `docs/standards/security_rules.md`
 
 ## Scope Discipline
-- Stay within explicit scope boundaries.
-- Capture deferred items explicitly instead of silently expanding scope.
+- Stay within explicit in-scope boundaries.
+- Record deferred work explicitly instead of silently expanding scope.
 - Optional cleanup is out of scope unless required for correctness or risk reduction.
-
-## Repeated-Use Optimization Rules
-- Keep recurring operational guidance in this file; move details to `docs/`.
-- Use stable terminology across protocol, standards, templates, issues, and PRs.
-- Prefer concise directives over long narrative.
-- Optimize for future tasks that only say: “Follow `AGENTS.md` and implement this.”

@@ -13,6 +13,8 @@ Update docs in the same change set when work changes:
 Depending on scope, update one or more of:
 - `README.md`
 - `AGENTS.md` (only for recurring operational guidance)
+- `docs/project_profile.md`
+- `PLANS.md`
 - `docs/protocols/`
 - `docs/standards/`
 - `docs/templates/`

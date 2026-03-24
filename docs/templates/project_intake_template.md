@@ -8,6 +8,9 @@
 
 ## End Point
 
+## Task Class (initial)
+- `small` / `non-trivial` / `high-risk`
+
 ## In Scope
 - 
 
@@ -23,13 +26,16 @@
 ## Failure Criteria
 - 
 
-## Validation Commands
+## Validation Commands (expected)
 - 
 
 ## Environment Assumptions
 - 
 
 ## Risks
+- 
+
+## Stop Conditions (task-specific)
 - 
 
 ## Notes

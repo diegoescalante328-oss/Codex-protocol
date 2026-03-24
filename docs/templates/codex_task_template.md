@@ -1,6 +1,6 @@
 # Codex Task Template
 
-> Follow `AGENTS.md` and the repository protocol/standards docs.
+> Follow `AGENTS.md`, `docs/project_profile.md`, and protocol/standards docs.
 
 ## Task
 
@@ -9,6 +9,9 @@
 ## Start Point
 
 ## End Point
+
+## Task Class
+- `small` / `non-trivial` / `high-risk`
 
 ## In Scope
 - 
@@ -23,6 +26,9 @@
 - 
 
 ## Failure Criteria
+- 
+
+## Done Definition
 - 
 
 ## Required Workflow

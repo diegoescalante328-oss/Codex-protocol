@@ -3,8 +3,10 @@
 ## Objective
 Provide a uniform method to prove implementation quality, report evidence, and separate introduced failures from pre-existing issues.
 
-## Universal Checks
-Run every check that is applicable to the task and repository stack:
+## Applicability Rule
+Run every check that is applicable to the task and repository stack. For non-trivial/high-risk tasks, planned checks must be listed in the ExecPlan before Implementation.
+
+## Universal Check Categories
 - Unit tests
 - Integration tests
 - Lint
@@ -14,7 +16,7 @@ Run every check that is applicable to the task and repository stack:
 - Smoke test
 - Manual acceptance check
 
-If a check is not run, mark it `N/A` or `BLOCKED` with a reason.
+If a check is not run, mark it `N/A` or `BLOCKED` with reason and impact.
 
 ## Required Reporting Format
 Use a table with:
@@ -41,7 +43,7 @@ Also report:
 | Manual acceptance check | See checklist | PASS | Acceptance checks complete. |
 
 ## Acceptance Checklist Template
-- [ ] Objective and end point achieved (or explicitly marked Partial/Blocked).
+- [ ] Objective and End Point achieved (or explicitly marked `Partial`/`Blocked`).
 - [ ] In-scope work completed.
 - [ ] Out-of-scope boundaries respected.
 - [ ] Applicable checks completed and reported with evidence.
@@ -51,5 +53,6 @@ Also report:
 - [ ] Rollback/recovery notes included when relevant.
 
 ## Where to Report Validation
+- ExecPlan Validation Plan: `docs/templates/execplan_template.md`
 - Completion handoff: `docs/reports/completion_report_template.md`
 - Pull requests: `.github/pull_request_template.md`
