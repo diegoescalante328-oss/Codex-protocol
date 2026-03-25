@@ -1,6 +1,6 @@
 # Execution Plan (ExecPlan) Template
 
-> Required for non-trivial and high-risk tasks. See `PLANS.md` for trigger rules and quality bar.
+> Required whenever `PLANS.md` trigger rules apply (including non-trivial/high-risk and other trigger conditions). Use this template to meet the planning quality bar.
 
 ## Task
 

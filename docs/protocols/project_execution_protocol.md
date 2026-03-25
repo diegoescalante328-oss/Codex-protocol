@@ -40,8 +40,7 @@ Define the authoritative lifecycle for Codex Project Kit tasks so work is scoped
 **Required inputs/actions**
 - Draft ordered implementation steps with explicit target files.
 - Define planned checks from `docs/standards/validation_matrix.md`.
-- If task is non-trivial/high-risk, create or update ExecPlan in `plans/active/` using `docs/templates/execplan_template.md`.
-- Apply planning rules in `PLANS.md`.
+- Apply planning rules in `PLANS.md`; create or update an ExecPlan in `plans/active/` using `docs/templates/execplan_template.md` whenever triggers require it.
 
 **Required outputs**
 - Plan artifact with scope boundaries, risks, validation plan, Done Definition, and reporting expectations.
