@@ -5,6 +5,11 @@ Codex Project Kit is a reusable repository operating system for running tasks fr
 ## Why this exists
 This repository reduces prompt repetition and quality variance in repeated Codex-driven work.
 
+## Operator entry points
+- Fast start: [`PROJECT_QUICKSTART.md`](PROJECT_QUICKSTART.md)
+- Practical operator manual: [`HOW_TO_USE_THIS_PROJECT.md`](HOW_TO_USE_THIS_PROJECT.md)
+- Core authority: [`AGENTS.md`](AGENTS.md), [`PLANS.md`](PLANS.md), and [`docs/`](docs/)
+
 ## Start here
 1. Read [`AGENTS.md`](AGENTS.md) for operating rules.
 2. Read [`docs/project_profile.md`](docs/project_profile.md) for repo-specific conventions.
