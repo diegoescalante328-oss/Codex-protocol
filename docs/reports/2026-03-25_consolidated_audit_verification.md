@@ -111,7 +111,7 @@ Rationale:
 | Core routing verification | `cat README.md`, `cat docs/project_profile.md`, `cat docs/protocols/project_execution_protocol.md`, `cat docs/protocols/stage_definitions.md` | PASS | Confirmed routing/authority/vocabulary cohesion. |
 | Validation/report alignment | `cat docs/standards/validation_matrix.md`, `cat docs/reports/completion_report_template.md`, `cat .github/pull_request_template.md` | PASS | Confirmed status model and reporting fields are aligned. |
 | Example discoverability | `cat docs/examples/README.md`, `cat docs/examples/reports/example_completion_report.md` | PASS | Confirmed examples exist and are linked. |
-| Prior-remediation evidence | `cat plans/active/2026-03-25_planning_system_remediation_execplan.md` | PASS | Confirms prior planning-remediation intent and scope. |
+| Prior-remediation evidence | `cat plans/completed/2026-03-25_planning_system_remediation_execplan.md` | PASS | Confirms prior planning-remediation intent and scope. |
 | Audit expectation mismatch check | `test -f HOW_TO_USE_THIS_PROJECT.md; echo $?` and `test -f PROJECT_QUICKSTART.md; echo $?` | PASS | Both files absent; used to classify partial confirmations against audit expectations. |
 
 ## Assumptions

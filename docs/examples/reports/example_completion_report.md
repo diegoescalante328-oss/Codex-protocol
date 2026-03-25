@@ -8,7 +8,7 @@ Hardened planning/reporting routing by introducing `PLANS.md`, aligning protocol
 - End Point Achieved: Yes
 
 ## Plan Reference
-- ExecPlan path (if used): `plans/active/2026-03-24_protocol_hardening_execplan.md`
+- ExecPlan path (if used): `plans/completed/2026-03-24_protocol_hardening_execplan.md`
 - Plan deviations and rationale: No material deviations.
 
 ## Files Changed

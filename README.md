@@ -33,11 +33,13 @@ Task classification and rigor: [`docs/protocols/stage_definitions.md`](docs/prot
 - Planning authority and trigger rules: [`PLANS.md`](PLANS.md)
 - ExecPlan template: [`docs/templates/execplan_template.md`](docs/templates/execplan_template.md)
 - Active plans: [`plans/active/`](plans/active/)
+- Completed plans archive: [`plans/completed/`](plans/completed/)
 - Example ExecPlan: [`docs/examples/execplans/example_protocol_docs_hardening_execplan.md`](docs/examples/execplans/example_protocol_docs_hardening_execplan.md)
 
 ## Validation and reporting
 - Validation matrix: [`docs/standards/validation_matrix.md`](docs/standards/validation_matrix.md)
 - Completion Report template: [`docs/reports/completion_report_template.md`](docs/reports/completion_report_template.md)
+- Reports index (latest audit + completion routing): [`docs/reports/README.md`](docs/reports/README.md)
 - PR template: [`.github/pull_request_template.md`](.github/pull_request_template.md)
 
 ## Examples
@@ -53,7 +55,8 @@ Practical reference artifacts live in [`docs/examples/`](docs/examples/):
 - `docs/protocols/`: lifecycle process, task classes, failure/recovery behavior.
 - `docs/standards/`: coding, validation, documentation, security standards.
 - `docs/templates/`: intake/task/ExecPlan templates.
-- `docs/reports/`: Completion Report template.
+- `docs/reports/`: Completion Report template and report index.
 - `docs/examples/`: realistic example artifacts.
 - `.github/`: issue templates, PR template, workflow scaffold.
 - `plans/active/`: active ExecPlans for non-trivial/high-risk tasks.
+- `plans/completed/`: closed ExecPlans (`Complete`/`Partial`/`Cancelled`/`Superseded`).
