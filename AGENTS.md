@@ -30,9 +30,9 @@ Use this stage order (lightweight for small tasks, full rigor for non-trivial/hi
 - Stop immediately if safe validation cannot be performed, required dependencies are missing, or unresolved security/data-loss risk appears.
 
 ## Planning Discipline
-- Non-trivial and high-risk tasks require an ExecPlan **before Implementation**.
-- Use `PLANS.md` for trigger rules and quality bar.
-- Store active plans in `plans/active/` using `docs/templates/execplan_template.md`.
+- Use `PLANS.md` as the authoritative planning policy.
+- Create/update an ExecPlan before Implementation whenever `PLANS.md` trigger rules require it.
+- Keep active ExecPlans in `plans/active/` using `docs/templates/execplan_template.md`.
 
 ## Validation and Reporting Discipline
 - Follow `docs/standards/validation_matrix.md`.

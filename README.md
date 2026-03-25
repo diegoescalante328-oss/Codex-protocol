@@ -25,8 +25,7 @@ Stage sequence:
 Task classification and rigor: [`docs/protocols/stage_definitions.md`](docs/protocols/stage_definitions.md).
 
 ## Planning system
-- Non-trivial/high-risk tasks require an ExecPlan before Implementation.
-- Planning guide: [`PLANS.md`](PLANS.md)
+- Planning authority and trigger rules: [`PLANS.md`](PLANS.md)
 - ExecPlan template: [`docs/templates/execplan_template.md`](docs/templates/execplan_template.md)
 - Active plans: [`plans/active/`](plans/active/)
 - Example ExecPlan: [`docs/examples/execplans/example_protocol_docs_hardening_execplan.md`](docs/examples/execplans/example_protocol_docs_hardening_execplan.md)
