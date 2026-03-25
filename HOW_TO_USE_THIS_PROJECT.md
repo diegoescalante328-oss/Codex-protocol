@@ -21,7 +21,34 @@ Practical operator manual for recurring work in this repository.
 2. Re-open the relevant ExecPlan and validation expectations.
 3. Continue from the current stage, then hand off with a Completion Report.
 
-## 2) Where authority lives
+## 2) When to stay in ChatGPT vs move to Codex
+
+This is the key transition decision.
+
+### Stay in ChatGPT project workflow when work is:
+- Lightweight and bounded.
+- Primarily exploratory (brainstorming, first-draft outlining, short Q&A).
+- Small enough to manage in a single chat/project context.
+- Not yet dependent on strict file history, staged execution, or formal validation evidence.
+
+### Move to Codex repository workflow when work becomes:
+- Multi-step, multi-file, or cross-component.
+- Long-running and likely to require iterative hardening.
+- Sensitive to quality variance from repeated prompting.
+- In need of governed execution (explicit scope, planning gates, validation matrix, Completion Report).
+
+### How to transition from chat → repo
+1. Bring in the confirmed objective, scope boundaries, constraints, and success criteria from ChatGPT.
+2. Start Discovery in this repo and identify target files/dependencies.
+3. Classify task size; create/update ExecPlan when required by [`PLANS.md`](PLANS.md).
+4. Execute through stages with validation evidence and handoff artifacts.
+
+### What changes after moving
+- Guidance shifts from repeated prompts to repository-native instructions (`AGENTS.md`, protocols, standards, templates).
+- Work becomes staged and auditable rather than purely conversational.
+- Validation and reporting expectations become explicit and repeatable.
+
+## 3) Where authority lives
 
 - Operating rules and priority: [`AGENTS.md`](AGENTS.md)
 - Planning trigger/quality policy: [`PLANS.md`](PLANS.md)
@@ -31,7 +58,7 @@ Practical operator manual for recurring work in this repository.
 - Completion reporting: [`docs/reports/`](docs/reports/)
 - Example artifacts: [`docs/examples/`](docs/examples/)
 
-## 3) Minimal operating checklist
+## 4) Minimal operating checklist
 
 1. **Discovery**: confirm target files, assumptions, dependencies, risks.
 2. **Plan**: decide task class (`small` / `non-trivial` / `high-risk`) and create/update ExecPlan if required by `PLANS.md`.
@@ -39,7 +66,7 @@ Practical operator manual for recurring work in this repository.
 4. **Validate**: run applicable checks; mark non-run checks `N/A` or `BLOCKED` with reason/impact.
 5. **Handoff**: produce a Completion Report using [`docs/reports/completion_report_template.md`](docs/reports/completion_report_template.md).
 
-## 4) Fast links by intent
+## 5) Fast links by intent
 
 - “I need to start quickly” → [`PROJECT_QUICKSTART.md`](PROJECT_QUICKSTART.md)
 - “Do I need an ExecPlan?” → [`PLANS.md`](PLANS.md)
