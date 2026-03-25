@@ -2,22 +2,26 @@
 
 Fast-start guide for first run and repeated runs.
 
+> Use this after work has outgrown a ChatGPT project workflow and moved into this Codex repository workflow.
 > This guide is intentionally thin. For authority and policy, follow `AGENTS.md`, `PLANS.md`, and `docs/`.
 
 ## Quickstart (10-minute path)
 
-1. **Read operating rules**
+1. **Confirm you are in the right workflow**
+   - ChatGPT project workflow = lightweight/exploratory
+   - Codex repository workflow = structured/scalable/governed
+2. **Read operating rules**
    - [`AGENTS.md`](AGENTS.md)
    - [`docs/project_profile.md`](docs/project_profile.md)
-2. **Confirm planning requirement**
+3. **Confirm planning requirement**
    - Check task class in [`docs/protocols/stage_definitions.md`](docs/protocols/stage_definitions.md)
    - Apply trigger rules in [`PLANS.md`](PLANS.md)
-3. **Pick a template and start work**
+4. **Pick a template and start work**
    - Intake template: [`docs/templates/project_intake_template.md`](docs/templates/project_intake_template.md)
    - ExecPlan template (when required): [`docs/templates/execplan_template.md`](docs/templates/execplan_template.md)
-4. **Run lifecycle stages**
+5. **Run lifecycle stages**
    - Follow [`docs/protocols/project_execution_protocol.md`](docs/protocols/project_execution_protocol.md)
-5. **Validate and hand off**
+6. **Validate and hand off**
    - Validation rules: [`docs/standards/validation_matrix.md`](docs/standards/validation_matrix.md)
    - Completion Report template: [`docs/reports/completion_report_template.md`](docs/reports/completion_report_template.md)
 
@@ -30,6 +34,8 @@ Fast-start guide for first run and repeated runs.
 5. Publish Completion Report.
 
 ## If you only remember one thing
+
+This repo is the scaling path from chat → repo when work needs structured execution.
 
 Use this authority chain for conflicts or ambiguity:
 1. `AGENTS.md`

@@ -1,9 +1,21 @@
 # Codex Project Kit
 
-Codex Project Kit is a reusable repository operating system for running tasks from intake through Completion Report with clear scope, staged execution, validation evidence, and safe handoff.
+Codex Project Kit is a **Codex-first operating system for work that outgrows ChatGPT project constraints**.
 
-## Why this exists
-This repository reduces prompt repetition and quality variance in repeated Codex-driven work.
+It is the structured alternative to keeping complex work inside ChatGPT project folders once scope, file count, and iteration depth start to exceed lightweight chat workflows.
+
+## Why this repository exists
+This repository is the scaling path from a **ChatGPT project workflow** to a **Codex repository workflow**:
+- ChatGPT project workflow is great for lightweight, bounded, exploratory tasks.
+- Codex repository workflow is better for multi-step, multi-file, governed execution.
+
+Inside this repo, work runs through explicit stages (Discovery → Handoff), planning gates, validation evidence, and completion reporting so larger efforts stay consistent and auditable.
+
+## What this gives you
+- A transition layer from chat-based work to repo-based execution.
+- Structured execution in Codex for non-trivial tasks.
+- Reduced prompt repetition by moving guidance into repo-native docs, templates, and standards.
+- Better scalability for long-running, multi-file work with clear governance.
 
 ## Operator entry points
 - Fast start: [`PROJECT_QUICKSTART.md`](PROJECT_QUICKSTART.md)
@@ -12,7 +24,7 @@ This repository reduces prompt repetition and quality variance in repeated Codex
 
 ## Start here
 1. Read [`AGENTS.md`](AGENTS.md) for operating rules.
-2. Read [`docs/project_profile.md`](docs/project_profile.md) for repo-specific conventions.
+2. Read [`docs/project_profile.md`](docs/project_profile.md) for repository positioning and conventions.
 3. Read planning rules in [`PLANS.md`](PLANS.md).
 4. Follow protocol stages in [`docs/protocols/project_execution_protocol.md`](docs/protocols/project_execution_protocol.md).
 

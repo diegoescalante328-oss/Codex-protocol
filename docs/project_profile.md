@@ -1,7 +1,19 @@
 # Project Profile
 
 ## Repository Identity
-Codex Project Kit is a governance scaffold for running scoped, staged, validated Codex execution with auditable handoff.
+Codex Project Kit is a Codex-first operating system for governed work that scales beyond ChatGPT project constraints.
+
+It serves as a structured transition layer from a **ChatGPT project workflow** (lightweight, bounded, exploratory) to a **Codex repository workflow** (structured, scalable, auditable).
+
+## Repository Purpose
+- Provide a scaling path for AI-assisted work that outgrows chat-first constraints.
+- Turn repeated prompt guidance into stable repository-native guidance (protocols, standards, templates).
+- Enable multi-step, multi-file execution with explicit planning, validation, and handoff.
+
+## Relationship to ChatGPT Project Workflows
+- Work may originate outside this repository (e.g., in ChatGPT exploration/intake).
+- This repository is the next operating mode once scope, complexity, or governance needs exceed chat-project ergonomics.
+- Transition expectation: import clarified objective/scope/constraints, then execute via staged protocol here.
 
 ## Primary Users
 - Engineers and technical leads delegating delivery tasks to Codex.
