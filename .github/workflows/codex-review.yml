@@ -34,6 +34,12 @@ jobs:
           test -d docs/examples/execplans
           test -d docs/examples/reports
 
+
+      - name: Docs drift-prevention check
+        run: |
+          set -euo pipefail
+          python3 scripts/check_docs_drift.py
+
       - name: Markdown heading sanity check
         run: |
           set -euo pipefail

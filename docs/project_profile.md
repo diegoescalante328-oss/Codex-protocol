@@ -21,7 +21,7 @@ Codex Project Kit is a governance scaffold for running scoped, staged, validated
 ## Planning Expectations
 - Non-trivial/high-risk tasks require an ExecPlan before Implementation.
 - Planning rules and quality bar live in `PLANS.md`.
-- Active plans live in `plans/active/`.
+- Active plans live in `plans/active/` and closed plans move to `plans/completed/`.
 
 ## Validation Expectations
 - Use `docs/standards/validation_matrix.md` as authoritative check/report format.
@@ -41,9 +41,10 @@ Codex Project Kit is a governance scaffold for running scoped, staged, validated
 - Protocol: `docs/protocols/`
 - Standards: `docs/standards/`
 - Templates: `docs/templates/`
-- Completion reporting: `docs/reports/`
+- Completion reporting: `docs/reports/` (see index in `docs/reports/README.md`)
 - Examples: `docs/examples/`
 - Active ExecPlans: `plans/active/`
+- Completed ExecPlans: `plans/completed/`
 
 ## Review Expectations
 Reviewers should verify:

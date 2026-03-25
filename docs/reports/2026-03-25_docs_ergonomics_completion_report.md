@@ -8,14 +8,14 @@ Completed a scoped documentation ergonomics pass to improve first-run and repeat
 - End Point Achieved: Yes
 
 ## Plan Reference
-- ExecPlan path: `plans/active/2026-03-25_docs_ergonomics_entrypoints_execplan.md`
+- ExecPlan path: `plans/completed/2026-03-25_docs_ergonomics_entrypoints_execplan.md`
 - Plan deviations and rationale: None. Implementation matched planned scope.
 
 ## Files Changed
 - `HOW_TO_USE_THIS_PROJECT.md` (new)
 - `PROJECT_QUICKSTART.md` (new)
 - `README.md` (routing-only update)
-- `plans/active/2026-03-25_docs_ergonomics_entrypoints_execplan.md` (new)
+- `plans/completed/2026-03-25_docs_ergonomics_entrypoints_execplan.md` (new)
 - `docs/reports/2026-03-25_docs_ergonomics_completion_report.md` (new)
 
 ## Ergonomics Improvements
